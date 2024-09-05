@@ -1,5 +1,8 @@
 
 
+npm install react-icons --save
+react animation : npm install @react-spring/web
+
 
 https://ibb.co/6mQyBhK
 https://ibb.co/rbbZ2fb
@@ -13,3 +16,5 @@ https://ibb.co/99F22wH
 https://ibb.co/bvfb7WB
 https://ibb.co/jrJHR3s
 https://ibb.co/p34WQ7C
+
+https://ibb.co/G9qwH5b

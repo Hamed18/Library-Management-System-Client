@@ -1,26 +1,41 @@
-import logo from "../../src/assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
+import logo from "../../src/assets/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../src/Providers/AuthProviders";
+import userdefaultPic from "../../src/assets/user.png"
 
 const Navbar = () => {
-	const navLinks = (
-		<>
-		  <li>
-			<NavLink to="/">Home</NavLink>
-		  </li>
-		  <li>
-			<NavLink to="/availableFoods">All Books</NavLink>
-		  </li>
-		  <li>
-			<NavLink to="/addFood">Add Book</NavLink>
-		  </li>
-		  <li>
-			<NavLink to="/manageMyFoods">Borrowed Books</NavLink>
-		  </li>
-		</>
-	  );
+  const { user, logOut } = useContext(AuthContext);
 
-	return (
-		<div className="navbar bg-base-100">
+  const handleSignOut = () => {
+    logOut()
+    .then()
+    .catch();
+  }; 
+
+
+  const navLinks = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/availableFoods">Available Foods</NavLink>
+      </li>
+      <li>
+        <NavLink to="/addFood">Add Food</NavLink>
+      </li>
+      <li>
+        <NavLink to="/manageMyFoods">Manage My Foods</NavLink>
+      </li>
+      <li>
+        <NavLink to="/myRequest">My Request</NavLink>
+      </li>
+    </>
+  );
+  return (
+    <div className="">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,8 +63,8 @@ const Navbar = () => {
           </div>
           <a className="flex items-center btn btn-ghost text-2xl font-bold">
             <img src={logo} alt="ReeFood Logo" className="w-8 h-8 mr-" />
-            <span className="text-green-300">Library</span>
-            <span className="text-green-600 font-bold ml-[-9px]">Hub</span>
+            <span className="text-green-300">Ree</span>
+            <span className="text-green-600 font-bold ml-[-9px]">Food</span>
           </a>
         </div>
 
@@ -57,11 +72,12 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
 
-        {/* <div className="navbar-end">
+        
+       <div className="navbar-end">
           {user ? (
-            <div className="flex mr-2">
-              <div className="w-10 rounded-full md:tooltip md:tooltip-left" data-tip={user.displayName}>
-                <img alt="Tailwind CSS Navbar component" src={user?.photoURL? user.photoURL : {userdefaultPic}} className="rounded-full mr-1" />
+            <div className="flex">
+              <div className="hidden w-10 rounded-full md:tooltip md:tooltip-left" data-tip={user.displayName}>
+                <img alt="Tailwind CSS Navbar component" src={user? user.photoURL : {userdefaultPic}} className="rounded-full mr-1" />
               </div>
               <button onClick={handleSignOut} className="btn btn-primary">
                 Sign Out
@@ -72,11 +88,11 @@ const Navbar = () => {
               <button className="btn btn-primary">Login</button>
             </Link>
           )}  
-		  <div className="w-10 rounded-full md:tooltip md:tooltip-left"></div>
-		    <img alt="Tailwind CSS Navbar component" src={userdefaultPic} className="rounded-full mr-1" />
-		  </div>  */}
+		    </div>
+
       </div>
-	);
+    </div>
+  );
 };
 
 export default Navbar;
