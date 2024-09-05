@@ -5,11 +5,11 @@ import Root from "../Layout/Root";
 const routes = createBrowserRouter([
 	{
 	  path: "/",
-	  element: <Home></Home>,
+	  element: <Root></Root>,
 	  children: [
 		{
 			path: "/",
-			element: <Root></Root>
+			element: <Home></Home>
 		}
 	  ]
 	},
