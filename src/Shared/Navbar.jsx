@@ -20,13 +20,13 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/availableFoods">Available Foods</NavLink>
+        <NavLink to="/availableBooks">Available Books</NavLink>
       </li>
       <li>
-        <NavLink to="/addFood">Add Food</NavLink>
+        <NavLink to="/addBook">Add Book</NavLink>
       </li>
       <li>
-        <NavLink to="/manageMyFoods">Manage My Foods</NavLink>
+        <NavLink to="/manageMyBooks">Manage My Books</NavLink>
       </li>
       <li>
         <NavLink to="/myRequest">My Request</NavLink>
@@ -62,9 +62,9 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="flex items-center btn btn-ghost text-2xl font-bold">
-            <img src={logo} alt="ReeFood Logo" className="w-8 h-8 mr-" />
+            <img src={logo} alt="ReeBook Logo" className="w-8 h-8 mr-" />
             <span className="text-green-300">Ree</span>
-            <span className="text-green-600 font-bold ml-[-9px]">Food</span>
+            <span className="text-green-600 font-bold ml-[-9px]">Book</span>
           </a>
         </div>
 

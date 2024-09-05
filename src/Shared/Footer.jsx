@@ -17,7 +17,7 @@ const Footer = () => {
           </svg> */}
           <p className="font-bold">
             <div className="flex items-center btn btn-ghost text-2xl font-bold">
-              <img src={logo} alt="ReeFood Logo" className="w-8 h-8 mr" /> 
+              <img src={logo} alt="ReeBook Logo" className="w-8 h-8 mr" /> 
               <span className="text-green-300">Libray</span>
               <span className="text-green-600 font-bold ml-[-9px]">Hub</span>
             </div>

@@ -1,6 +1,7 @@
 
 
 npm install react-icons --save
+npm install sweetalert2
 react animation : npm install @react-spring/web
 
 
