@@ -4,6 +4,7 @@ import Root from "../Layout/Root";
 import Login from "../UserAuthentication/Login";
 import Register from "../UserAuthentication/Register";
 import AddBook from "../Pages/AddBook/AddBook";
+import AllBooks from "../Pages/AllBooks/AllBooks";
 
 const routes = createBrowserRouter([
 	{
@@ -17,6 +18,11 @@ const routes = createBrowserRouter([
 		{
 			path: "/addBook",
 			element: <AddBook></AddBook>
+		},
+		{
+			path: "/allBook",
+			element: <AllBooks></AllBooks>,
+			loader: () => fetch('http://localhost:3000/allBooks')
 		},
 		{
 			path: "/login",
