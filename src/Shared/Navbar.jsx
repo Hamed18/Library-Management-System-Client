@@ -13,7 +13,6 @@ const Navbar = () => {
     .catch();
   }; 
 
-
   const navLinks = (
     <>
       <li>
@@ -26,13 +25,11 @@ const Navbar = () => {
         <NavLink to="/addBook">Add Book</NavLink>
       </li>
       <li>
-        <NavLink to="/manageMyBooks">Manage My Books</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myRequest">My Request</NavLink>
+        <NavLink to="/borrowedBooks">Borrowed Books</NavLink>
       </li>
     </>
   );
+
   return (
     <div className="">
       <div className="navbar bg-base-100">
@@ -72,12 +69,11 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
 
-        
-       <div className="navbar-end">
+        <div className="navbar-end">
           {user ? (
             <div className="flex">
               <div className="hidden w-10 rounded-full md:tooltip md:tooltip-left" data-tip={user.displayName}>
-                <img alt="Tailwind CSS Navbar component" src={user? user.photoURL : {userdefaultPic}} className="rounded-full mr-1" />
+                <img alt="Tailwind CSS Navbar component" src={user ? user.photoURL : {userdefaultPic}} className="rounded-full mr-1" />
               </div>
               <button onClick={handleSignOut} className="btn btn-primary">
                 Sign Out
@@ -88,7 +84,7 @@ const Navbar = () => {
               <button className="btn btn-primary">Login</button>
             </Link>
           )}  
-		    </div>
+        </div>
 
       </div>
     </div>

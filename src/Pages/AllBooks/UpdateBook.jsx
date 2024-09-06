@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import 'sweetalert2/dist/sweetalert2.min.css';
 import { useState } from "react";
 import Select from 'react-select'; // For dropdown
 
@@ -59,7 +60,15 @@ const UpdateBook = () => {
 					});
 				}
 			})
-			.catch(err => console.log(err));
+			.catch(err => {
+				console.log(err);
+				Swal.fire({
+					title: "Oops!",
+					text: {err},
+					icon: "err",
+					confirmButtonText: 'OK'
+				});
+			});
 	};
 
 	return (
