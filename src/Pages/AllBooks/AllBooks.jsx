@@ -2,15 +2,14 @@ import { useLoaderData } from "react-router-dom";
 import AllBookCard from "./AllBookCard";
 
 const AllBooks = () => {
-	const AllBooks = useLoaderData();
+	const allBooks = useLoaderData();
 	return (
 		<div className="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
 		{
-		 AllBooks.map(allBook => 
+		 allBooks.map(Book => 
 			<AllBookCard
-			key = {allBook._id}
-			allBook = {allBook}>
-				
+			key = {Book._id}
+			Book = {Book}>
 			</AllBookCard>
 		 )
 		}

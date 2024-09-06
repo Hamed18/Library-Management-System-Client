@@ -5,6 +5,7 @@ import Login from "../UserAuthentication/Login";
 import Register from "../UserAuthentication/Register";
 import AddBook from "../Pages/AddBook/AddBook";
 import AllBooks from "../Pages/AllBooks/AllBooks";
+import UpdateBook from "../Pages/AllBooks/UpdateBook";
 
 const routes = createBrowserRouter([
 	{
@@ -23,6 +24,11 @@ const routes = createBrowserRouter([
 			path: "/allBook",
 			element: <AllBooks></AllBooks>,
 			loader: () => fetch('http://localhost:3000/allBooks')
+		},
+		{
+			path: "/allBook/:id",
+			element: <UpdateBook></UpdateBook>,
+			loader: ({params}) => fetch(`http://localhost:3000/allBooks/${params.id}`)
 		},
 		{
 			path: "/login",

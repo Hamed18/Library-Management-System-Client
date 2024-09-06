@@ -4,8 +4,9 @@ import Rating from 'react-rating';
 
 // npm install react-rating
 
-const AllBookCard = ({allBook}) => {
+const AllBookCard = ({Book}) => {
 	const {
+		_id,
 		BookName,
 		BookImage,
 		BookQuantity,
@@ -15,7 +16,7 @@ const AllBookCard = ({allBook}) => {
 		authorImage,
 		authorName,
 		authorEmail
-	} = allBook;
+	} = Book;
 
 	return (
 		<div className="rounded-lg shadow-lg sm:w-96 dark:bg-gray-800 dark:text-gray-200 p-4 m-4 transform hover:scale-105 transition-transform duration-200 ease-in-out">
@@ -54,11 +55,11 @@ const AllBookCard = ({allBook}) => {
 
         {/* Update button */}
         <div className="flex justify-center">
-          {/* <Link to={`/updateBook/${book._id}`}> */}
+          <Link to={`/allBook/${_id}`}>
             <button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-pink-600 hover:to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-200 ease-in-out">
               Update
             </button>
-          {/* </Link> */}
+          </Link>
         </div>
       </div>
     </div>
