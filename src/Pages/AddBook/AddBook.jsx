@@ -9,26 +9,22 @@ const AddBook = () => {
     event.preventDefault();
 
     const form = event.target;
-    const BookName = form.BookName.value.trim().toLowerCase(); // Easy for search
+    const BookName = form.BookName.value;  
     const BookImage = form.BookImage.value;
     const BookQuantity = form.BookQuantity.value;
     const category = form.category.value;  
     const rating = form.rating.value;
     const description = form.description.value; 
-    const authorImage = user.photoURL;
-    const authorName = user.displayName;
-    const authorEmail = user.email;
+    const authorName = form.authorName.value;
 
     const newBook = {
+      authorName,
       BookName,
       BookImage,
       BookQuantity: parseInt(BookQuantity, 10),
       category,
-      rating: parseInt(BookQuantity, 10),
-      description,
-      authorImage,
-      authorName,
-      authorEmail,
+      rating: parseInt(rating, 10),
+      description
     };
     console.log("New Book Data:", newBook);
 
@@ -47,7 +43,7 @@ const AddBook = () => {
 		if (data.insertedId){
 			Swal.fire({
 				title: "Gratitude!",
-				text: "Book Items Added Successfully",
+				text: "New Book Added Successfully",
 				icon: "success",
 				confirmButtonText: 'OK'
 			});
@@ -55,7 +51,8 @@ const AddBook = () => {
 
 	})
 
-  };
+};
+
 
   return (
     <div className="">
@@ -70,24 +67,9 @@ const AddBook = () => {
               <p className="font-medium text-gray-900 dark:text-gray-100">
                 author Information
               </p>
-              <p className="text-xs text-gray-600 dark:text-gray-400">
-                Details about the author.
-              </p>
             </div>
             <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-              <div className="col-span-full sm:col-span-3">
-                <label
-                  htmlFor="authorImage"
-                  className="text-sm text-gray-900 dark:text-gray-100"
-                >
-                  author Image
-                </label>
-                <img
-                //   src={user?.photoURL? user.photoURL : null}
-                  alt="author"
-                  className="rounded-full h-20 w-20"
-                />
-              </div>
+  
               <div className="col-span-full sm:col-span-3">
                 <label
                   htmlFor="authorName"
@@ -98,29 +80,10 @@ const AddBook = () => {
                 <input
                   id="authorName"
                   type="text"
-				//   {
-				// 	user.displayName? defaultValue={user.displayName}: null
-				//   }
-				//   defaultValue={user.displayName}
-                //  readOnly
                   className="w-full rounded-md border border-gray-300 dark:border-gray-700 focus:ring focus:ring-opacity-75 focus:ring-violet-600 dark:text-gray-50 dark:focus:ring-violet-600"
                 />
               </div>
-              <div className="col-span-full">
-                <label
-                  htmlFor="authorEmail"
-                  className="text-sm text-gray-900 dark:text-gray-100"
-                >
-                  author Email
-                </label>
-                <input
-                  id="authorEmail"
-                  type="email"
-                //   defaultValue={user.email}
-                  readOnly
-                  className="w-full rounded-md border border-gray-300 dark:border-gray-700 focus:ring focus:ring-opacity-75 focus:ring-violet-600 dark:text-gray-50 dark:focus:ring-violet-600"
-                />
-              </div>
+
             </div>
           </fieldset>
 
@@ -187,13 +150,16 @@ const AddBook = () => {
                 >
                   Category
                 </label>
-                <input
+                <select
                   id="category"
-                  type="text"
-                  placeholder="category"
                   className="w-full rounded-md border border-gray-300 dark:border-gray-700 focus:ring focus:ring-opacity-75 focus:ring-violet-600 dark:text-gray-50 dark:focus:ring-violet-600"
                   required
-                />
+                >
+                  <option value="History">History</option>
+                  <option value="Business">Business</option>
+                  <option value="Technology">Technology</option>
+                  <option value="Comics">Comics</option>
+                </select>
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label
@@ -204,10 +170,10 @@ const AddBook = () => {
                 </label>
                 <input
                   id="rating"
-				  type="number"
-				  min="1"
-				  max="5"
-				  placeholder="i.g. 1,2,..5"
+				          type="number"
+				          min="1"
+				          max="5"
+				          placeholder="i.g. 1,2,..5"
                   className="w-full rounded-md border border-gray-300 dark:border-gray-700 focus:ring focus:ring-opacity-75 focus:ring-violet-600 dark:text-gray-50 dark:focus:ring-violet-600"
                   required
                 />
