@@ -5,13 +5,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules"; 
 
-import a from "../../src/assets/Images/comic1.jpeg"
+import a from "../../src/assets/Images/c-2.jpeg"
 import b from "../../src/assets/Images/comic2.jpeg"
 import c from "../../src/assets/Images/comic3.jpeg"
 import d from "../../src/assets/Images/comic4.jpeg"
 import e from "../../src/assets/Images/culture1.jpeg"
-import f from "../../src/assets/Images/culture4.jpeg"
-import g from "../../src/assets/Images/busi2.jpeg"
+import f from "../../src/assets/Images/t-2.jpeg"
+import g from "../../src/assets/Images/t-1.jpeg"
 const Banner = () => {
   return (
     <div className="w-full h-60 md:h-96 lg:h-[600px] bg-gray-100">

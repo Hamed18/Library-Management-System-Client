@@ -60,8 +60,8 @@ const Navbar = () => {
           </div>
           <a className="flex items-center btn btn-ghost text-2xl font-bold">
             <img src={logo} alt="ReeBook Logo" className="w-8 h-8 mr-" />
-            <span className="text-green-300">Ree</span>
-            <span className="text-green-600 font-bold ml-[-9px]">Book</span>
+            <span className="text-green-300">Library</span>
+            <span className="text-green-600 font-bold ml-[-9px]">Hub</span>
           </a>
         </div>
 

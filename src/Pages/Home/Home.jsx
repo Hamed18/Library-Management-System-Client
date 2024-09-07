@@ -1,4 +1,5 @@
 import Banner from "../../Shared/Banner";
+import Category from "./Category";
 
 const Home = () => {
   return (
@@ -42,16 +43,12 @@ const Home = () => {
                 learning by making library management seamless and effective.
               </p>
             </div>
-
-            {/* <div className="w-full md:w-1/3 bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Our Team</h3>
-            <p className="text-gray-600">
-              Our dedicated team of professionals brings a wealth of experience in technology and library sciences. We are passionate about creating tools that make a difference and committed to providing excellent support to our users.
-            </p>
-          </div> */}
           </div>
         </div>
       </section>
+
+      <h3 className="text-center font-bold text-3xl mt-12 mb-8">Featured Category</h3>
+      <Category></Category>
     </div>
   );
 };
