@@ -9,6 +9,7 @@ import UpdateBook from "../Pages/AllBooks/UpdateBook";
 import ErrorPage from "./ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
+import CategoryCard from "../Pages/Home/CategoryCard";
 
 const routes = createBrowserRouter([
 	{
@@ -46,6 +47,10 @@ const routes = createBrowserRouter([
 			path: "/register",
 			element: <Register></Register>
 		},
+		// {
+		// 	path: "/categoryPage",
+		// 	element: <CategoryCard></CategoryCard>
+		// },
 	  ]
 	},
   ]);
