@@ -10,6 +10,7 @@ import ErrorPage from "./ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 import CategoryCard from "../Pages/Home/CategoryCard";
+import ViewCategory from "../Pages/Home/ViewCategory";
 
 const routes = createBrowserRouter([
 	{
@@ -20,6 +21,12 @@ const routes = createBrowserRouter([
 		{
 			path: "/",
 			element: <Home></Home>
+		},
+		{
+			path: "/viewCategory",
+			element: <ViewCategory></ViewCategory>,
+			loader: () => fetch('http://localhost:3000/allBooks')
+	//		loader: ({params}) => fetch(`http://localhost:3000/allBooks/${params.category}`)
 		},
 		{
 			path: "/addBook",
@@ -46,11 +53,7 @@ const routes = createBrowserRouter([
 		{
 			path: "/register",
 			element: <Register></Register>
-		},
-		// {
-		// 	path: "/categoryPage",
-		// 	element: <CategoryCard></CategoryCard>
-		// },
+		}
 	  ]
 	},
   ]);
